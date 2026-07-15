@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freedom Bourbon — Comfort Peace Freedom Foundation</title>
+<link rel="shortcut icon" href="assets/cpff.png">
+<!-- Live-site fonts: industry-inc-base + lato via the cpff.us Typekit kit -->
+<link rel="stylesheet" href="https://use.typekit.net/lzt2dto.css">
+<!-- Fallbacks for environments the Typekit kit doesn't cover -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  /* ============ Tokens from ken-rusk-military-website theme (css/global/_variables.scss) ============ */
+  :root{
+    --dblue: #003366;         /* $dblue — footer, headings */
+    --dblue2: #002142;        /* $dblue2 — header bar */
+    --blue4: #4E95F1;         /* $blue4 — heading <strong> accent */
+    --red: #CE2532;           /* $red — CTA */
+    --red-light: #D93743;     /* lighten($red, 5%) */
+    --text: #282828;          /* $text-color */
+    --grey-light: #F6F8FA;
+    --hfont: industry-inc-base, 'Oswald', sans-serif;
+    --lato: lato, 'Lato', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;font-size:16px}
+  body{font-family:var(--lato);color:var(--text);background:#fff;line-height:1.4;font-size:20px}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  ul,li{list-style:none}
+  h1,h2,h3,h4{font-family:var(--hfont);font-weight:400;text-transform:uppercase;color:var(--dblue);line-height:1.04}
+  h1 strong,h2 strong,h3 strong{color:var(--blue4);font-weight:400}
+  .sw{max-width:1300px;margin:0 auto;padding:0 32px;position:relative}
+
+  /* ============ HEADER (components/_header.scss) ============ */
+  #header-container{position:sticky;top:0;z-index:100;width:100%}
+  #header{width:100%;background:var(--dblue2);box-shadow:3px 3px 3px rgba(0,0,0,.1)}
+  #header .sw{height:110px;display:flex;align-items:center;justify-content:space-between}
+  .header__logo{width:400px;max-width:60vw}
+  .header__logo img{width:100%}
+  .cta{position:relative;text-decoration:none;background:var(--red);color:#fff!important;font-size:26px;line-height:1.1;border-radius:8px;padding:20px 34px 14px;min-width:170px;text-align:center;transition:.2s ease;text-transform:uppercase;display:inline-block;box-shadow:0 3px 3px #00000019;font-family:var(--hfont)}
+  .cta:hover{background:var(--red-light)}
+  .cta--header{padding:18px 34px 12px;min-width:unset}
+
+  /* ============ PRODUCT HERO (Hemingway layout) ============ */
+  .hero{max-width:1300px;margin:0 auto;padding:56px 32px 72px;display:grid;grid-template-columns:1.08fr 1fr;gap:60px}
+  .stage{background:var(--grey-light);border-radius:6px;overflow:hidden;position:relative}
+  .stage img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2}
+  .gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:none;border-radius:50%;background:rgba(0,33,66,.55);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;z-index:2}
+  .gal-nav:hover{background:var(--red)}
+  .gal-nav--prev{left:14px}
+  .gal-nav--next{right:14px}
+  .gal-nav svg{width:18px;height:18px;display:block}
+  .gal-nav svg path{stroke:#fff;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .stage iframe{width:100%;height:100%;aspect-ratio:3/2;border:0;display:block}
+  .stage iframe[hidden],.stage img[hidden]{display:none}
+  .thumb--video{position:relative}
+  .thumb--video::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.25);pointer-events:none}
+  .thumb--video::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:0;height:0;border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #fff;z-index:2;pointer-events:none;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}
+  .thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:14px}
+  .thumb{border:1px solid #d8dfe9;border-radius:6px;overflow:hidden;cursor:pointer;padding:0;background:none;transition:.15s}
+  .thumb img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+  .thumb:hover,.thumb.active{border-color:var(--red);box-shadow:0 0 0 2px var(--red)}
+
+  .details .eyebrow{font-size:17px;letter-spacing:.5px;margin-bottom:8px;color:var(--dblue);font-weight:700;text-transform:uppercase}
+  .details h1{font-size:clamp(44px,5vw,64px);margin-bottom:22px}
+  .details h1 .star{color:var(--red)}
+  .meta{color:var(--red);font-weight:700;font-size:17px;letter-spacing:1px;margin:0 0 20px;font-family:var(--hfont);text-transform:uppercase}
+  .meta span{margin:0 6px;font-weight:400}
+  .details p{margin-bottom:16px;font-size:18px;line-height:1.5}
+  .note{font-weight:700}
+
+  /* checkout embed (replaces Buy Now CTA) */
+  .checkout{margin:26px 0 6px;border:2px solid var(--dblue);border-radius:8px;overflow:hidden}
+  .checkout h3{background:var(--dblue2);color:#fff;font-size:19px;letter-spacing:2px;padding:14px 18px}
+  .checkout h3 .star{color:var(--red)}
+  .checkout iframe{display:block;width:100%;height:440px;border:0;background:#fafbfc}
+
+  /* accordions */
+  .acc{border-top:2px solid var(--dblue);margin-top:28px}
+  .acc:last-of-type{border-bottom:2px solid var(--dblue)}
+  .acc-head{display:flex;justify-content:space-between;align-items:center;padding:16px 0;cursor:pointer;user-select:none}
+  .acc-head h3{font-size:19px;letter-spacing:2px}
+  .acc-head .tog{font-size:24px;line-height:1;color:var(--dblue)}
+  .acc-body{padding:0 0 22px;display:none;font-size:17px;line-height:1.5}
+  .acc.open .acc-body{display:block}
+  .acc-body p{margin-bottom:12px}
+  .acc-body b{font-weight:700}
+
+  /* ============ FOOTER (components/_footer-new.scss) ============ */
+  .footer-new{padding:30px 0;background:var(--dblue);background-image:url('assets/bg3.jpg');background-position:center;background-size:cover}
+  .footer-new .sw{display:flex;justify-content:space-between;align-items:center;gap:30px}
+  .footer-new .logo{width:520px;max-width:100%;transform:translateY(8px)}
+  .footer__designed{display:block;transform:translateY(4px);width:260px;flex:0 0 auto}
+  .footer__designed>a{display:flex;align-items:center;justify-content:flex-end}
+  .footer__designed>a span{color:#fff;display:block;margin-right:10px;font-size:16px}
+  .footer__designed>a img{width:110px}
+  .footer-bottom__small{margin-top:15px;text-align:right}
+  .footer-bottom__small p{font-size:13px;line-height:17px;color:rgba(255,255,255,.3);margin:0}
+  .footer-bottom__small a{color:rgba(255,255,255,.3);text-decoration:underline}
+
+  /* partners strip (section.partners) */
+  .partners{background:var(--dblue2);padding:34px 0}
+  .partners .sw{display:flex;align-items:center;justify-content:center;gap:40px}
+  .partners__title h2{color:rgba(255,255,255,.5);font-size:20px;letter-spacing:3px;position:relative;padding-right:56px}
+  .partners__title h2:after{content:"";position:absolute;right:0;top:50%;width:40px;height:1px;background:rgba(255,255,255,.3)}
+  .partners__logos img{width:150px}
+
+  .legal-strip{background:var(--dblue2);border-top:1px solid rgba(255,255,255,.08);padding:16px 0}
+  .legal-strip p{color:rgba(255,255,255,.35);font-size:13px;text-align:center;line-height:1.6}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr;gap:40px;padding-top:36px}
+    #header .sw{height:70px}
+    .header__logo{width:220px}
+    .cta--header{font-size:16px;padding:10px 26px 6px;min-width:unset}
+    .footer-new{padding:60px 0}
+    .footer-new .sw{display:block;text-align:center}
+    .footer-new .logo{margin:0 auto 40px;transform:none}
+    .footer__designed{margin:0 auto;transform:none}
+    .footer__designed>a{justify-content:center}
+    .footer-bottom__small{text-align:center}
+    .partners .sw{flex-direction:column;gap:20px}
+    .partners__title h2{padding-right:0}
+    .partners__title h2:after{display:none}
+  }
+  @media (max-width:560px){
+    .thumbs{gap:8px}
+    .details h1{font-size:40px}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===================== HEADER (replicates cpff.us) ===================== -->
+  <div id="header-container" class="header-container">
+    <header id="header">
+      <div class="sw">
+        <a href="https://cpff.us" class="header__logo">
+          <img src="assets/cpff.png" alt="Comfort Peace Freedom Foundation">
+        </a>
+        <a href="#checkout" class="cta cta--header">Donate</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- ===================== PRODUCT HERO (Hemingway layout) ===================== -->
+  <section class="hero">
+
+    <!-- Left: photo gallery -->
+    <div>
+      <div class="stage">
+        <img id="stage-img" src="images/web/photo-6.jpg" alt="Freedom Bourbon bottle with Comfort Peace Freedom Foundation gift box and rocks glass">
+        <iframe id="stage-video" src="" title="Freedom Bourbon video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen hidden></iframe>
+        <button class="gal-nav gal-nav--prev" aria-label="Previous image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 4 L7 12 L15 20"/></svg></button>
+        <button class="gal-nav gal-nav--next" aria-label="Next image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 4 L17 12 L9 20"/></svg></button>
+      </div>
+      <div class="thumbs">
+        <button class="thumb active" data-full="images/web/photo-6.jpg"><img src="images/web/thumb-6.jpg" alt="Bottle, gift box and glass"></button>
+        <button class="thumb" data-full="images/web/photo-21.jpg"><img src="images/web/thumb-21.jpg" alt="Bottle in front of gift box"></button>
+        <button class="thumb" data-full="images/web/photo-4.jpg"><img src="images/web/thumb-4.jpg" alt="Gift box and bottle on vintage crate"></button>
+        <button class="thumb" data-full="images/web/photo-3NF.jpg"><img src="images/web/thumb-3NF.jpg" alt="Ken Rusk holding Freedom Bourbon"></button>
+        <button class="thumb" data-full="images/web/photo-24.jpg"><img src="images/web/thumb-24.jpg" alt="A message from the founder — back label"></button>
+        <button class="thumb thumb--video" data-video="FbtsVdZv73Q"><img src="images/web/thumb-video.jpg" alt="Watch: Freedom Bourbon video"></button>
+      </div>
+    </div>
+
+    <!-- Right: product details -->
+    <div class="details">
+      <p class="eyebrow">Comfort Peace Freedom Foundation</p>
+      <h1>Freedom <strong>Bourbon</strong></h1>
+
+      <p class="meta">700ml <span>/</span> 96 Proof <span>/</span> 48% ABV</p>
+
+      <p>A small-batch bourbon crafted by founder Ken Rusk to fuel the mission of the Comfort Peace Freedom Foundation. United we stand &mdash; in every pour.</p>
+
+      <p>Every bottle you buy helps give our veterans a fresh start: goal-setting resources, blue-collar career guidance, and a bridge from their pasts toward a future of stability and peace. Read Ken's message to you on the back of every bottle.</p>
+
+      <p class="note">***Please allow up to two weeks for shipping. Must be 21+ to purchase.</p>
+
+      <!-- Checkout embed — replace the iframe src with the live checkout URL -->
+      <div class="checkout" id="checkout">
+        <h3>Reserve Your Bottle <span class="star">&starf;</span> Secure Checkout</h3>
+        <iframe src="about:blank" title="Freedom Bourbon secure checkout" loading="lazy"></iframe>
+      </div>
+
+      <div class="acc open">
+        <div class="acc-head"><h3>Blend</h3><span class="tog">&minus;</span></div>
+        <div class="acc-body">
+          <p><b>85%</b> &mdash; 6 y/o Kentucky Straight Bourbon (75/13/12)</p>
+          <p><b>15%</b> &mdash; 4 y/o Indiana High-Rye Bourbon (60/36/4)</p>
+        </div>
+      </div>
+
+      <div class="acc open">
+        <div class="acc-head"><h3>Tasting Notes</h3><span class="tog">&minus;</span></div>
+        <div class="acc-body">
+          <p><b>Nose:</b> Caramel, vanilla, toasted oak, dried corn and a touch of orchard fruit.</p>
+          <p><b>Palate:</b> Big notes of brown sugar and baking spice balanced with dark cherry, leather and tobacco, finishing long with charred oak and honey.</p>
+        </div>
+      </div>
+
+      <div class="acc open">
+        <div class="acc-head"><h3>Your Impact</h3><span class="tog">&minus;</span></div>
+        <div class="acc-body">
+          <p><b>From service to stability:</b> proceeds from every bottle help a veteran set tangible goals, define their personal vision of the American dream, and achieve financial stability.</p>
+          <p><b>Your purchase puts life-changing resources</b> &mdash; Ken Rusk's bestselling book, The Path course, and the Blueprint Sessions Workbook &mdash; into the hands of our veterans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER (replicates cpff.us footer-new) ===================== -->
+  <footer class="footer-new">
+    <div class="sw">
+      <img class="logo" src="assets/cpff.png" alt="Comfort Peace Freedom Foundation">
+      <div class="footer__designed">
+        <a href="https://www.artonicweb.com/" target="_blank">
+          <span>Website by</span>
+          <img src="assets/artonic.png" alt="Artonic">
+        </a>
+        <div class="footer-bottom__small">
+          <p>CPF is protected by reCAPTCHA. Google's
+          <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <section class="partners">
+    <div class="sw">
+      <div class="partners__title"><h2>Our Partner</h2></div>
+      <div class="partners__logos">
+        <a href="https://zerotoengineer.com/book/" target="_blank">
+          <img src="assets/ngt-academy.png" alt="NGT Academy">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="legal-strip">
+    <p class="sw">Proceeds from Freedom Bourbon benefit the Comfort Peace Freedom Foundation. Must be 21 or older to purchase. Please drink responsibly.</p>
+  </div>
+
+<script>
+  // Gallery: thumbnails + chevron navigation
+  var stage = document.getElementById('stage-img');
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll('.thumb'));
+  var current = 0;
+  var stageVideo = document.getElementById('stage-video');
+  function showImage(i){
+    current = (i + thumbs.length) % thumbs.length;
+    thumbs.forEach(function(x){x.classList.remove('active')});
+    var t = thumbs[current];
+    t.classList.add('active');
+    var videoId = t.getAttribute('data-video');
+    if (videoId) {
+      stage.hidden = true;
+      stageVideo.hidden = false;
+      stageVideo.src = 'https://www.youtube.com/embed/' + videoId + '?rel=0';
+    } else {
+      stageVideo.hidden = true;
+      stageVideo.src = '';
+      stage.hidden = false;
+      stage.src = t.getAttribute('data-full');
+      stage.alt = t.querySelector('img').alt;
+    }
+  }
+  thumbs.forEach(function(t, i){
+    t.addEventListener('click', function(){ showImage(i); });
+  });
+  document.querySelector('.gal-nav--prev').addEventListener('click', function(){ showImage(current - 1); });
+  document.querySelector('.gal-nav--next').addEventListener('click', function(){ showImage(current + 1); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft') showImage(current - 1);
+    if (e.key === 'ArrowRight') showImage(current + 1);
+  });
+  // Accordions
+  document.querySelectorAll('.acc-head').forEach(function(head){
+    head.addEventListener('click', function(){
+      var acc = head.parentElement;
+      acc.classList.toggle('open');
+      head.querySelector('.tog').innerHTML = acc.classList.contains('open') ? '&minus;' : '+';
+    });
+  });
+</script>
+</body>
+</html>

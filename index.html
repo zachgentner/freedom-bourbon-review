@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Freedom Bourbon — Landing Page Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dblue:#003366;
+    --red:#CE2532;
+    --text:#282828;
+    --grey-light:#F6F8FA;
+    --hfont:'Oswald',sans-serif;
+    --lato:'Lato',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:var(--lato);
+    color:var(--text);
+    background:var(--grey-light);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  header{
+    background:var(--dblue);
+    color:#fff;
+    text-align:center;
+    padding:48px 24px 40px;
+  }
+  header .eyebrow{
+    font-family:var(--hfont);
+    font-weight:500;
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.65);
+    margin-bottom:10px;
+  }
+  header h1{
+    font-family:var(--hfont);
+    font-weight:600;
+    font-size:clamp(28px,4vw,42px);
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+  header .rule{
+    width:56px;height:3px;background:var(--red);
+    margin:18px auto 16px;
+  }
+  header p{
+    max-width:560px;margin:0 auto;
+    font-size:16px;line-height:1.6;
+    color:rgba(255,255,255,.85);
+  }
+  main{
+    flex:1;
+    width:100%;
+    max-width:1040px;
+    margin:0 auto;
+    padding:56px 24px 72px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:32px;
+  }
+  .card{
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,20,50,.08);
+    display:flex;
+    flex-direction:column;
+    text-decoration:none;
+    color:inherit;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 28px rgba(0,20,50,.16);
+  }
+  .card .preview{
+    position:relative;
+    height:280px;
+    overflow:hidden;
+    background:#0b1626;
+  }
+  .card .preview img{
+    width:100%;
+    display:block;
+    object-fit:cover;
+    object-position:top;
+    height:100%;
+  }
+  .card .preview::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(to bottom, transparent 55%, rgba(0,0,0,.35));
+  }
+  .card .body{
+    padding:26px 28px 30px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    flex:1;
+  }
+  .card .tag{
+    font-family:var(--hfont);
+    font-weight:500;
+    font-size:12px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--red);
+  }
+  .card h2{
+    font-family:var(--hfont);
+    font-weight:600;
+    font-size:24px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:var(--dblue);
+  }
+  .card p{
+    font-size:15px;
+    line-height:1.6;
+    color:#555;
+    flex:1;
+  }
+  .card .cta{
+    margin-top:14px;
+    align-self:flex-start;
+    font-family:var(--hfont);
+    font-weight:500;
+    font-size:14px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#fff;
+    background:var(--red);
+    padding:12px 26px;
+    border-radius:3px;
+  }
+  .card:hover .cta{background:#b51f2b}
+  footer{
+    text-align:center;
+    padding:26px 24px 34px;
+    font-size:13px;
+    color:#8a94a3;
+  }
+  footer img{height:22px;opacity:.55;display:block;margin:0 auto 8px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">For Review — Not Public</div>
+  <h1>Freedom Bourbon Landing Pages</h1>
+  <div class="rule"></div>
+  <p>Two draft versions of the Freedom Bourbon landing page are ready for your review. Select a version below to view it in full.</p>
+</header>
+
+<main>
+  <a class="card" href="landing-cpff.html">
+    <div class="preview"><img src="assets/preview-cpff.png" alt="Preview of the CPFF version"></div>
+    <div class="body">
+      <div class="tag">Version A</div>
+      <h2>CPFF Foundation</h2>
+      <p>Presented under the Comfort Peace Freedom Foundation brand, leading with the foundation's mission and the causes each bottle supports.</p>
+      <span class="cta">View This Version</span>
+    </div>
+  </a>
+
+  <a class="card" href="landing-kenrusk.html">
+    <div class="preview"><img src="assets/preview-kenrusk.png" alt="Preview of the Ken Rusk version"></div>
+    <div class="body">
+      <div class="tag">Version B</div>
+      <h2>Ken Rusk</h2>
+      <p>Presented under the Ken Rusk personal brand, leading with Ken's story and voice as the face of Freedom Bourbon.</p>
+      <span class="cta">View This Version</span>
+    </div>
+  </a>
+</main>
+
+<footer>
+  <img src="assets/artonic.png" alt="Artonic">
+  Prepared by Artonic for client review
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Allowlist approach: ignore everything, then re-include only deployable files.
+# Keeps raw photos (877MB), transcripts, notes, and PDFs out of the public repo.
+*
+
+!.gitignore
+!.nojekyll
+!index.html
+!landing-cpff.html
+!landing-kenrusk.html
+
+!assets/
+!assets/**
+
+!images/
+images/*
+!images/web/
+!images/web/**
