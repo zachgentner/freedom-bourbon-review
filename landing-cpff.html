@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Freedom Bourbon — Comfort Peace Freedom Foundation</title>
+<meta name="description" content="Freedom Bourbon — a small-batch bourbon from the Comfort Peace Freedom Foundation. 100% of profits go to our military and veterans.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Freedom Bourbon — Comfort Peace Freedom Foundation">
+<meta property="og:description" content="Reward their service by purchasing a bottle of Freedom. 100% of profits go to our military and veterans.">
+<meta property="og:image" content="https://zachgentner.github.io/freedom-bourbon-review/images/web/photo-6.jpg">
+<meta property="og:url" content="https://zachgentner.github.io/freedom-bourbon-review/landing-cpff.html">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="shortcut icon" href="assets/cpff.png">
 <!-- Live-site fonts: industry-inc-base + lato via the cpff.us Typekit kit -->
 <link rel="stylesheet" href="https://use.typekit.net/lzt2dto.css">
@@ -27,7 +34,7 @@
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;font-size:16px}
   body{font-family:var(--lato);color:var(--text);background:#fff;line-height:1.4;font-size:20px}
-  img{max-width:100%;display:block}
+  img{max-width:100%;height:auto;display:block}
   a{text-decoration:none;color:inherit}
   ul,li{list-style:none}
   h1,h2,h3,h4{font-family:var(--hfont);font-weight:400;text-transform:uppercase;color:var(--dblue);line-height:1.04}
@@ -38,15 +45,27 @@
   #header-container{position:sticky;top:0;z-index:100;width:100%}
   #header{width:100%;background:var(--dblue2);box-shadow:3px 3px 3px rgba(0,0,0,.1)}
   #header .sw{height:110px;display:flex;align-items:center;justify-content:space-between}
-  .header__logo{width:400px;max-width:60vw}
-  .header__logo img{width:100%}
+  .header__brand{display:flex;align-items:center;gap:20px;min-width:0}
+  .brand-flag{width:84px;flex:0 0 auto}
+  .brand-text{display:flex;flex-direction:column;min-width:0}
+  .brand-line{font-family:var(--hfont);color:#fff;font-size:clamp(22px,3vw,40px);text-transform:uppercase;letter-spacing:1px;line-height:1;white-space:nowrap}
+  .brand-line .star{color:var(--red);font-style:normal;font-size:.5em;vertical-align:.3em;margin:0 9px}
   .cta{position:relative;text-decoration:none;background:var(--red);color:#fff!important;font-size:26px;line-height:1.1;border-radius:8px;padding:20px 34px 14px;min-width:170px;text-align:center;transition:.2s ease;text-transform:uppercase;display:inline-block;box-shadow:0 3px 3px #00000019;font-family:var(--hfont)}
   .cta:hover{background:var(--red-light)}
   .cta--header{padding:18px 34px 12px;min-width:unset}
 
+  /* ============ MISSION BANNER (above main content) ============ */
+  .mission{background:var(--dblue) url('assets/bg3.jpg') center/cover no-repeat;position:relative}
+  .mission::before{content:"";position:absolute;inset:0;background:rgba(0,33,66,.55)}
+  .mission__grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:56px;align-items:center;padding-top:56px;padding-bottom:56px}
+  .m-line1{font-family:var(--hfont);text-transform:uppercase;color:#fff;opacity:.9;font-size:min(24px,calc(2.43vw - 8.7px));letter-spacing:2px;line-height:1.2;margin-bottom:14px;white-space:nowrap}
+  .m-line2{color:#fff;font-size:clamp(34px,3.8vw,54px);line-height:1.06;text-wrap:balance}
+  .m-line2 strong{color:var(--blue4)}
+
   /* ============ PRODUCT HERO (Hemingway layout) ============ */
-  .hero{max-width:1300px;margin:0 auto;padding:56px 32px 72px;display:grid;grid-template-columns:1.08fr 1fr;gap:60px}
+  .hero{max-width:1300px;margin:0 auto;padding:56px 32px 72px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:60px}
   .stage{background:var(--grey-light);border-radius:6px;overflow:hidden;position:relative}
+  .stage-zoom{display:block;width:100%;padding:0;border:none;background:none;cursor:zoom-in}
   .stage img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2}
   .gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:none;border-radius:50%;background:rgba(0,33,66,.55);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;z-index:2}
   .gal-nav:hover{background:var(--red)}
@@ -56,38 +75,68 @@
   .gal-nav svg path{stroke:#fff;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
   .stage iframe{width:100%;height:100%;aspect-ratio:3/2;border:0;display:block}
   .stage iframe[hidden],.stage img[hidden]{display:none}
-  .thumb--video{position:relative}
-  .thumb--video::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.25);pointer-events:none}
-  .thumb--video::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:0;height:0;border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #fff;z-index:2;pointer-events:none;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}
-  .thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:14px}
+  .thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:14px 0}
   .thumb{border:1px solid #d8dfe9;border-radius:6px;overflow:hidden;cursor:pointer;padding:0;background:none;transition:.15s}
   .thumb img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
   .thumb:hover,.thumb.active{border-color:var(--red);box-shadow:0 0 0 2px var(--red)}
 
-  .details .eyebrow{font-size:17px;letter-spacing:.5px;margin-bottom:8px;color:var(--dblue);font-weight:700;text-transform:uppercase}
-  .details h1{font-size:clamp(44px,5vw,64px);margin-bottom:22px}
-  .details h1 .star{color:var(--red)}
+  .details .product-title{font-size:clamp(28px,4.1vw,46px);line-height:1;margin-bottom:12px;white-space:nowrap}
+  .details .line3{font-family:var(--hfont);text-transform:uppercase;color:var(--dblue);font-size:min(20px,calc(1.88vw - 4.5px));letter-spacing:1px;line-height:1.2;margin-bottom:16px;white-space:nowrap}
+  .details .line3 .all{color:#3B82E6}
   .meta{color:var(--red);font-weight:700;font-size:17px;letter-spacing:1px;margin:0 0 20px;font-family:var(--hfont);text-transform:uppercase}
   .meta span{margin:0 6px;font-weight:400}
   .details p{margin-bottom:16px;font-size:18px;line-height:1.5}
-  .note{font-weight:700}
+  .note{font-weight:700;font-size:15px!important;margin:10px 0 0!important}
+
+  /* Ken's video — lives in the mission banner */
+  .video-box{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+  .video-box iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
+
+  /* Impact of your donation */
+  .impact{margin:28px 0 0;background:var(--grey-light);border-left:6px solid var(--red);border-radius:6px;padding:22px 26px}
+  .impact h3{font-size:21px;letter-spacing:2px;margin-bottom:10px}
+  .impact p{font-size:18px;line-height:1.5;margin:0}
+  .impact p b{color:var(--dblue)}
+
+  /* ============ HONORING OUR FALLEN WARRIORS (below main content) ============ */
+  .fallen{background:var(--dblue2) url('images/web/soldier-grave.jpg') center/cover no-repeat;padding:80px 0}
+  .fallen__card{max-width:560px;background:rgba(0,33,66,.93);border-radius:8px;padding:38px 40px;box-shadow:0 8px 30px rgba(0,0,0,.35);text-align:center}
+  .fallen__card h2{color:#fff;font-size:24px;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:12px;line-height:1.15;white-space:nowrap}
+  .fallen__card h2 .star{color:var(--red);transform:translateY(-1px)}
+  .fallen__card p{color:rgba(255,255,255,.92);font-size:18px;line-height:1.6;margin:18px 0 0}
+  .fallen__card p b{color:#fff}
+  .fallen__card .cta{margin-top:26px}
+  .cta--fallen{font-size:20px;padding:18px 36px 13px}
 
   /* checkout embed (replaces Buy Now CTA) */
-  .checkout{margin:26px 0 6px;border:2px solid var(--dblue);border-radius:8px;overflow:hidden}
+  .checkout{margin:26px 0 6px;border:2px solid var(--dblue);border-radius:8px;overflow:hidden;scroll-margin-top:130px}
   .checkout h3{background:var(--dblue2);color:#fff;font-size:19px;letter-spacing:2px;padding:14px 18px}
   .checkout h3 .star{color:var(--red)}
   .checkout iframe{display:block;width:100%;height:440px;border:0;background:#fafbfc}
 
   /* accordions */
   .acc{border-top:2px solid var(--dblue);margin-top:28px}
+  .acc + .acc{margin-top:0}
   .acc:last-of-type{border-bottom:2px solid var(--dblue)}
-  .acc-head{display:flex;justify-content:space-between;align-items:center;padding:16px 0;cursor:pointer;user-select:none}
-  .acc-head h3{font-size:19px;letter-spacing:2px}
+  .acc h3{margin:0}
+  .acc-head{display:flex;justify-content:space-between;align-items:center;width:100%;padding:16px 0;cursor:pointer;user-select:none;background:none;border:none;font-family:var(--hfont);text-transform:uppercase;color:var(--dblue);font-size:19px;letter-spacing:2px;text-align:left}
+  .acc-head .label{transform:translateY(3px)}
   .acc-head .tog{font-size:24px;line-height:1;color:var(--dblue)}
-  .acc-body{padding:0 0 22px;display:none;font-size:17px;line-height:1.5}
+  .acc-body{padding:0 0 18px;display:none;font-size:17px;line-height:1.5}
   .acc.open .acc-body{display:block}
   .acc-body p{margin-bottom:12px}
+  .acc-body p:last-child{margin-bottom:0}
   .acc-body b{font-weight:700}
+
+  /* ============ LIGHTBOX ============ */
+  .lightbox{position:fixed;inset:0;z-index:300;background:rgba(0,15,33,.92);display:flex;align-items:center;justify-content:center}
+  .lightbox[hidden]{display:none}
+  .lightbox img{max-width:88vw;max-height:86vh;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+  .lb-close{position:absolute;top:14px;right:22px;background:none;border:none;color:#fff;font-size:46px;line-height:1;cursor:pointer;opacity:.8;transition:.2s;z-index:2}
+  .lb-close:hover{opacity:1}
+  .lightbox .gal-nav{position:absolute}
+  .lightbox .gal-nav--prev{left:22px}
+  .lightbox .gal-nav--next{right:22px}
 
   /* ============ FOOTER (components/_footer-new.scss) ============ */
   .footer-new{padding:30px 0;background:var(--dblue);background-image:url('assets/bg3.jpg');background-position:center;background-size:cover}
@@ -114,9 +163,18 @@
   /* ============ RESPONSIVE ============ */
   @media (max-width:980px){
     .hero{grid-template-columns:1fr;gap:40px;padding-top:36px}
-    #header .sw{height:70px}
-    .header__logo{width:220px}
+    .mission__grid{grid-template-columns:1fr;gap:30px;padding-top:40px;padding-bottom:40px}
+    .m-line1{font-size:min(24px,calc(4.55vw - 7.5px))}
+    .details .line3{font-size:min(20px,calc(3.85vw - 5px))}
+    #header .sw{height:78px}
+    .checkout{scroll-margin-top:98px}
+    .brand-flag{width:52px}
+    .header__brand{gap:12px}
+    .brand-line{font-size:20px}
+    .brand-line .star{margin:0 5px}
     .cta--header{font-size:16px;padding:10px 26px 6px;min-width:unset}
+    .fallen{padding:48px 0}
+    .fallen__card{padding:30px 26px}
     .footer-new{padding:60px 0}
     .footer-new .sw{display:block;text-align:center}
     .footer-new .logo{margin:0 auto 40px;transform:none}
@@ -129,7 +187,16 @@
   }
   @media (max-width:560px){
     .thumbs{gap:8px}
-    .details h1{font-size:40px}
+    .fallen__card h2{white-space:normal;font-size:21px}
+    .m-line1{white-space:normal;font-size:19px;text-wrap:balance}
+    .details .line3{white-space:normal;font-size:19px;text-wrap:balance}
+    #header .sw{height:64px;padding:0 16px}
+    .checkout{scroll-margin-top:84px}
+    .brand-flag{width:38px}
+    .header__brand{gap:9px}
+    .brand-line{font-size:15px;letter-spacing:.5px}
+    .brand-line .star{margin:0 4px}
+    .cta--header{font-size:14px;padding:8px 16px 5px}
   }
 </style>
 </head>
@@ -139,92 +206,116 @@
   <div id="header-container" class="header-container">
     <header id="header">
       <div class="sw">
-        <a href="https://cpff.us" class="header__logo">
-          <img src="assets/cpff.png" alt="Comfort Peace Freedom Foundation">
+        <a href="https://cpff.us" class="header__brand">
+          <img class="brand-flag" src="assets/cpff-flag.png" width="204" height="116" alt="">
+          <span class="brand-text">
+            <span class="brand-line">Comfort <i class="star" aria-hidden="true">&starf;</i> Peace <i class="star" aria-hidden="true">&starf;</i> Freedom</span>
+          </span>
         </a>
         <a href="#checkout" class="cta cta--header">Donate</a>
       </div>
     </header>
   </div>
 
+  <main>
+  <!-- ===================== MISSION BANNER (copy + Ken's video) ===================== -->
+  <section class="mission">
+    <div class="sw mission__grid">
+      <div class="mission__copy">
+        <p class="m-line1">Every day our military sacrifices for&nbsp;you</p>
+        <h1 class="m-line2">Reward their service by purchasing a bottle of <strong>Freedom</strong></h1>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/FbtsVdZv73Q?rel=0" title="A message from Ken Rusk — Freedom Bourbon" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== PRODUCT HERO (Hemingway layout) ===================== -->
   <section class="hero">
 
     <!-- Left: photo gallery -->
-    <div>
+    <div class="hero__left">
       <div class="stage">
-        <img id="stage-img" src="images/web/photo-6.jpg" alt="Freedom Bourbon bottle with Comfort Peace Freedom Foundation gift box and rocks glass">
-        <iframe id="stage-video" src="" title="Freedom Bourbon video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen hidden></iframe>
+        <button type="button" class="stage-zoom" aria-label="View image full screen">
+          <img id="stage-img" src="images/web/photo-6.jpg" width="1600" height="1067" alt="Freedom Bourbon bottle with Comfort Peace Freedom Foundation gift box and rocks glass">
+        </button>
         <button class="gal-nav gal-nav--prev" aria-label="Previous image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 4 L7 12 L15 20"/></svg></button>
         <button class="gal-nav gal-nav--next" aria-label="Next image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 4 L17 12 L9 20"/></svg></button>
       </div>
       <div class="thumbs">
-        <button class="thumb active" data-full="images/web/photo-6.jpg"><img src="images/web/thumb-6.jpg" alt="Bottle, gift box and glass"></button>
-        <button class="thumb" data-full="images/web/photo-21.jpg"><img src="images/web/thumb-21.jpg" alt="Bottle in front of gift box"></button>
-        <button class="thumb" data-full="images/web/photo-4.jpg"><img src="images/web/thumb-4.jpg" alt="Gift box and bottle on vintage crate"></button>
-        <button class="thumb" data-full="images/web/photo-3NF.jpg"><img src="images/web/thumb-3NF.jpg" alt="Ken Rusk holding Freedom Bourbon"></button>
-        <button class="thumb" data-full="images/web/photo-24.jpg"><img src="images/web/thumb-24.jpg" alt="A message from the founder — back label"></button>
-        <button class="thumb thumb--video" data-video="FbtsVdZv73Q"><img src="images/web/thumb-video.jpg" alt="Watch: Freedom Bourbon video"></button>
+        <button type="button" class="thumb active" data-full="images/web/photo-6.jpg"><img src="images/web/thumb-6.jpg" width="400" height="400" alt="Bottle, gift box and glass"></button>
+        <button type="button" class="thumb" data-full="images/web/photo-21.jpg"><img src="images/web/thumb-21.jpg" width="400" height="400" alt="Bottle in front of gift box"></button>
+        <button type="button" class="thumb" data-full="images/web/photo-4.jpg"><img src="images/web/thumb-4.jpg" width="400" height="400" alt="Gift box and bottle on vintage crate"></button>
+        <button type="button" class="thumb" data-full="images/web/photo-3NF.jpg"><img src="images/web/thumb-3NF.jpg" width="400" height="400" alt="Ken Rusk holding Freedom Bourbon"></button>
+        <button type="button" class="thumb" data-full="images/web/photo-24.jpg"><img src="images/web/thumb-24.jpg" width="400" height="400" alt="A message from the founder — back label"></button>
       </div>
     </div>
 
     <!-- Right: product details -->
     <div class="details">
-      <p class="eyebrow">Comfort Peace Freedom Foundation</p>
-      <h1>Freedom <strong>Bourbon</strong></h1>
+      <h2 class="product-title"><strong>Freedom</strong> Bourbon</h2>
+      <p class="line3"><span class="all">100% of profits</span> go to our military and&nbsp;veterans</p>
 
       <p class="meta">700ml <span>/</span> 96 Proof <span>/</span> 48% ABV</p>
 
-      <p>A small-batch bourbon crafted by founder Ken Rusk to fuel the mission of the Comfort Peace Freedom Foundation. United we stand &mdash; in every pour.</p>
-
-      <p>Every bottle you buy helps give our veterans a fresh start: goal-setting resources, blue-collar career guidance, and a bridge from their pasts toward a future of stability and peace. Read Ken's message to you on the back of every bottle.</p>
-
-      <p class="note">***Please allow up to two weeks for shipping. Must be 21+ to purchase.</p>
-
       <!-- Checkout embed — replace the iframe src with the live checkout URL -->
       <div class="checkout" id="checkout">
-        <h3>Reserve Your Bottle <span class="star">&starf;</span> Secure Checkout</h3>
+        <h3>Reserve Your Bottle <span class="star" aria-hidden="true">&starf;</span> Secure Checkout</h3>
         <iframe src="about:blank" title="Freedom Bourbon secure checkout" loading="lazy"></iframe>
       </div>
+      <p class="note">***Please allow up to two weeks for shipping. Must be 21+ to purchase.</p>
 
-      <div class="acc open">
-        <div class="acc-head"><h3>Blend</h3><span class="tog">&minus;</span></div>
+      <div class="impact">
+        <h3>Impact of Your Donation</h3>
+        <p>Each bottle of <b>FREEDOM</b> provides our warriors and their families a bridge to their vision for a life filled with Comfort, Peace and Freedom.</p>
+      </div>
+
+      <div class="acc">
+        <h3><button type="button" class="acc-head" aria-expanded="false"><span class="label">Blend</span><span class="tog" aria-hidden="true">+</span></button></h3>
         <div class="acc-body">
           <p><b>85%</b> &mdash; 6 y/o Kentucky Straight Bourbon (75/13/12)</p>
           <p><b>15%</b> &mdash; 4 y/o Indiana High-Rye Bourbon (60/36/4)</p>
         </div>
       </div>
 
-      <div class="acc open">
-        <div class="acc-head"><h3>Tasting Notes</h3><span class="tog">&minus;</span></div>
+      <div class="acc">
+        <h3><button type="button" class="acc-head" aria-expanded="false"><span class="label">Tasting Notes</span><span class="tog" aria-hidden="true">+</span></button></h3>
         <div class="acc-body">
           <p><b>Nose:</b> Caramel, vanilla, toasted oak, dried corn and a touch of orchard fruit.</p>
           <p><b>Palate:</b> Big notes of brown sugar and baking spice balanced with dark cherry, leather and tobacco, finishing long with charred oak and honey.</p>
         </div>
       </div>
 
-      <div class="acc open">
-        <div class="acc-head"><h3>Your Impact</h3><span class="tog">&minus;</span></div>
-        <div class="acc-body">
-          <p><b>From service to stability:</b> proceeds from every bottle help a veteran set tangible goals, define their personal vision of the American dream, and achieve financial stability.</p>
-          <p><b>Your purchase puts life-changing resources</b> &mdash; Ken Rusk's bestselling book, The Path course, and the Blueprint Sessions Workbook &mdash; into the hands of our veterans.</p>
-        </div>
+    </div>
+  </section>
+
+  <!-- ===================== HONORING OUR FALLEN WARRIORS ===================== -->
+  <section class="fallen">
+    <div class="sw">
+      <div class="fallen__card">
+        <h2><span class="star" aria-hidden="true">&starf;</span> Honoring Our Fallen Warriors <span class="star" aria-hidden="true">&starf;</span></h2>
+        <p><b>Thank you</b> for standing with our veterans.</p>
+        <p>Support like yours carries their families forward and keeps the memory of our fallen warriors alive.</p>
+        <p>For more information about aiding our vets or to donate more, go to <b>CPFF.US</b>.</p>
+        <a class="cta cta--fallen" href="https://cpff.us" target="_blank" rel="noopener">Visit CPFF.US</a>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- ===================== FOOTER (replicates cpff.us footer-new) ===================== -->
   <footer class="footer-new">
     <div class="sw">
-      <img class="logo" src="assets/cpff.png" alt="Comfort Peace Freedom Foundation">
+      <img class="logo" src="assets/cpff.png" width="961" height="140" alt="Comfort Peace Freedom Foundation">
       <div class="footer__designed">
-        <a href="https://www.artonicweb.com/" target="_blank">
+        <a href="https://www.artonicweb.com/" target="_blank" rel="noopener">
           <span>Website by</span>
-          <img src="assets/artonic.png" alt="Artonic">
+          <img src="assets/artonic.png" width="118" height="28" alt="Artonic">
         </a>
         <div class="footer-bottom__small">
           <p>CPF is protected by reCAPTCHA. Google's
-          <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</p>
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.</p>
         </div>
       </div>
     </div>
@@ -234,8 +325,8 @@
     <div class="sw">
       <div class="partners__title"><h2>Our Partner</h2></div>
       <div class="partners__logos">
-        <a href="https://zerotoengineer.com/book/" target="_blank">
-          <img src="assets/ngt-academy.png" alt="NGT Academy">
+        <a href="https://zerotoengineer.com/book/" target="_blank" rel="noopener">
+          <img src="assets/ngt-academy.png" width="5826" height="1061" alt="NGT Academy">
         </a>
       </div>
     </div>
@@ -245,45 +336,80 @@
     <p class="sw">Proceeds from Freedom Bourbon benefit the Comfort Peace Freedom Foundation. Must be 21 or older to purchase. Please drink responsibly.</p>
   </div>
 
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <button class="gal-nav gal-nav--prev" aria-label="Previous image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 4 L7 12 L15 20"/></svg></button>
+    <img id="lb-img" src="" alt="">
+    <button class="gal-nav gal-nav--next" aria-label="Next image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 4 L17 12 L9 20"/></svg></button>
+  </div>
+
 <script>
   // Gallery: thumbnails + chevron navigation
   var stage = document.getElementById('stage-img');
   var thumbs = Array.prototype.slice.call(document.querySelectorAll('.thumb'));
   var current = 0;
-  var stageVideo = document.getElementById('stage-video');
   function showImage(i){
     current = (i + thumbs.length) % thumbs.length;
     thumbs.forEach(function(x){x.classList.remove('active')});
     var t = thumbs[current];
     t.classList.add('active');
-    var videoId = t.getAttribute('data-video');
-    if (videoId) {
-      stage.hidden = true;
-      stageVideo.hidden = false;
-      stageVideo.src = 'https://www.youtube.com/embed/' + videoId + '?rel=0';
-    } else {
-      stageVideo.hidden = true;
-      stageVideo.src = '';
-      stage.hidden = false;
-      stage.src = t.getAttribute('data-full');
-      stage.alt = t.querySelector('img').alt;
-    }
+    stage.src = t.getAttribute('data-full');
+    stage.alt = t.querySelector('img').alt;
   }
   thumbs.forEach(function(t, i){
     t.addEventListener('click', function(){ showImage(i); });
   });
-  document.querySelector('.gal-nav--prev').addEventListener('click', function(){ showImage(current - 1); });
-  document.querySelector('.gal-nav--next').addEventListener('click', function(){ showImage(current + 1); });
+  // Lightbox
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbClose = document.querySelector('.lb-close');
+  var lastFocus = null;
+  function syncLightbox(){
+    if (!lightbox.hidden) { lbImg.src = stage.src; lbImg.alt = stage.alt; }
+  }
+  function nav(delta){ showImage(current + delta); syncLightbox(); }
+  function openLightbox(){
+    lastFocus = document.activeElement;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    syncLightbox();
+    lbClose.focus();
+  }
+  function closeLightbox(){
+    if (lightbox.hidden) return;
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+    (lastFocus && lastFocus !== document.body ? lastFocus : document.querySelector('.stage-zoom')).focus();
+  }
+  document.querySelector('.stage-zoom').addEventListener('click', openLightbox);
+  lbClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeLightbox(); });
+  document.querySelector('.stage .gal-nav--prev').addEventListener('click', function(){ nav(-1); });
+  document.querySelector('.stage .gal-nav--next').addEventListener('click', function(){ nav(1); });
+  document.querySelector('.lightbox .gal-nav--prev').addEventListener('click', function(){ nav(-1); });
+  document.querySelector('.lightbox .gal-nav--next').addEventListener('click', function(){ nav(1); });
   document.addEventListener('keydown', function(e){
-    if (e.key === 'ArrowLeft') showImage(current - 1);
-    if (e.key === 'ArrowRight') showImage(current + 1);
+    if (lightbox.hidden) return;
+    if (e.key === 'ArrowLeft') nav(-1);
+    if (e.key === 'ArrowRight') nav(1);
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'Tab') {
+      // keep focus inside the dialog
+      var focusables = lightbox.querySelectorAll('button');
+      var first = focusables[0], last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
   });
   // Accordions
   document.querySelectorAll('.acc-head').forEach(function(head){
     head.addEventListener('click', function(){
-      var acc = head.parentElement;
+      var acc = head.closest('.acc');
       acc.classList.toggle('open');
-      head.querySelector('.tog').innerHTML = acc.classList.contains('open') ? '&minus;' : '+';
+      var open = acc.classList.contains('open');
+      head.setAttribute('aria-expanded', open ? 'true' : 'false');
+      head.querySelector('.tog').innerHTML = open ? '&minus;' : '+';
     });
   });
 </script>
