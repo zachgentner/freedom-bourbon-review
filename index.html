@@ -63,6 +63,27 @@
     max-width:1040px;
     margin:0 auto;
     padding:56px 24px 72px;
+    display:flex;
+    flex-direction:column;
+    gap:48px;
+  }
+  .group{display:flex;flex-direction:column;gap:20px;}
+  .group-head .section-title{
+    font-family:var(--hfont);
+    font-weight:600;
+    font-size:20px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--dblue);
+  }
+  .group-head .section-sub{
+    font-size:14px;
+    line-height:1.55;
+    color:#667;
+    margin-top:6px;
+    max-width:620px;
+  }
+  .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:32px;
@@ -162,25 +183,60 @@
 </header>
 
 <main>
-  <a class="card" href="landing-cpff.html">
-    <div class="preview"><img src="assets/preview-cpff.png" alt="Preview of the CPFF version"></div>
-    <div class="body">
-      <div class="tag">Version A</div>
-      <h2>CPF Foundation</h2>
-      <p>Presented under the Comfort Peace Freedom Foundation brand, leading with the foundation's mission and the causes each bottle supports.</p>
-      <span class="cta">View This Version</span>
+  <section class="group">
+    <div class="group-head">
+      <div class="section-title">Landing Pages</div>
     </div>
-  </a>
+    <div class="grid">
+      <a class="card" href="landing-cpff.html">
+        <div class="preview"><img src="assets/preview-cpff.png" alt="Preview of the CPFF version"></div>
+        <div class="body">
+          <div class="tag">Version A</div>
+          <h2>CPF Foundation</h2>
+          <p>Presented under the Comfort Peace Freedom Foundation brand, leading with the foundation's mission and the causes each bottle supports.</p>
+          <span class="cta">View This Version</span>
+        </div>
+      </a>
 
-  <a class="card" href="landing-kenrusk.html">
-    <div class="preview"><img src="assets/preview-kenrusk.png" alt="Preview of the Ken Rusk version"></div>
-    <div class="body">
-      <div class="tag">Version B</div>
-      <h2>Ken Rusk</h2>
-      <p>Presented under the Ken Rusk personal brand, leading with Ken's story and voice as the face of Freedom Bourbon.</p>
-      <span class="cta">View This Version</span>
+      <a class="card" href="landing-kenrusk.html">
+        <div class="preview"><img src="assets/preview-kenrusk.png" alt="Preview of the Ken Rusk version"></div>
+        <div class="body">
+          <div class="tag">Version B</div>
+          <h2>Ken Rusk</h2>
+          <p>Presented under the Ken Rusk personal brand, leading with Ken's story and voice as the face of Freedom Bourbon.</p>
+          <span class="cta">View This Version</span>
+        </div>
+      </a>
     </div>
-  </a>
+  </section>
+
+  <section class="group">
+    <div class="group-head">
+      <div class="section-title">Interactive Homepage Concept</div>
+      <p class="section-sub">A proof of concept placing a dismissible promo banner and a floating "Freedom Bourbon" badge on each existing homepage. Open a version and try the &times; on the banner and the badge.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="poc-cpff.html">
+        <div class="preview"><img src="mockup_cpff.png" alt="Preview of the CPFF interactive concept"></div>
+        <div class="body">
+          <div class="tag">Concept A</div>
+          <h2>CPF Foundation</h2>
+          <p>The CPFF homepage with a live, dismissible promo banner and floating donation badge in the foundation's navy &amp; red brand.</p>
+          <span class="cta">View Interactive Demo</span>
+        </div>
+      </a>
+
+      <a class="card" href="poc-kenrusk.html">
+        <div class="preview"><img src="mockup_kenrusk.png" alt="Preview of the Ken Rusk interactive concept"></div>
+        <div class="body">
+          <div class="tag">Concept B</div>
+          <h2>Ken Rusk</h2>
+          <p>The Ken Rusk homepage with a live, dismissible promo banner and floating donation badge in Ken's navy &amp; gold brand.</p>
+          <span class="cta">View Interactive Demo</span>
+        </div>
+      </a>
+    </div>
+  </section>
 </main>
 
 <footer>
