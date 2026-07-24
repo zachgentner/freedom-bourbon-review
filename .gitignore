@@ -8,6 +8,14 @@
 !landing-cpff.html
 !landing-kenrusk.html
 
+# Interactive homepage concept (POC) pages + the assets they use
+!poc-cpff.html
+!poc-kenrusk.html
+!cpff.png
+!kenrusk.png
+!mockup_cpff.png
+!mockup_kenrusk.png
+
 !assets/
 !assets/**
 
@@ -15,3 +23,4 @@
 images/*
 !images/web/
 !images/web/**
+!images/CPF-Bourbon-Bottle-badge.png
